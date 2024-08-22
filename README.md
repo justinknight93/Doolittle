@@ -16,7 +16,7 @@ An application loader for the M5 Cardputer that runs Javascript.
 
 ### `load(script: string)`
 
-**Description**: Sets the script to be executed in the Duktape context.
+**Description**: Sets the script to be executed next when the current script ends. 
 
 **Parameters**:
 - `script` (string): The JavaScript code as a string to be loaded.
