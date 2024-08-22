@@ -1,6 +1,8 @@
 # Doolittle
 An application loader for the M5 Cardputer that runs Javascript.
 
+![Snake written in JS](readme.gif)
+
 ## Required Libraries
 - M5Cardputer by M5Stack
 - JavaScript by Joseph Read
