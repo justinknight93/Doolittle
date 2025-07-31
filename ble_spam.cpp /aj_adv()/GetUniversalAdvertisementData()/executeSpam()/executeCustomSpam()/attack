@@ -1,0 +1,41 @@
+BLE Attack Implementation
+The BLE attack functionality is primarily implemented in ble_spam.cpp. The key functions are:
+
+Attack Execution: aj_adv() function is the main entry point for executing attacks
+
+Takes an attack type parameter to determine which attack to execute
+Calls the appropriate execution function
+Payload Generation: GetUniversalAdvertisementData() creates the appropriate payload for each attack type
+
+Uses specific manufacturer IDs and data structures for each platform
+Generates random MAC addresses to avoid filtering
+Advertisement Sending: executeSpam() and executeCustomSpam() handle the actual sending of advertisements
+
+Configures the BLE advertising parameters
+Starts and stops advertisements with randomized parameters
+UsageScanning for BLE Devices
+From the main menu, select "BLE Menu"
+Select "BLE Scan"
+Wait for the scan to complete (default 5 seconds)
+Select a device from the list to view its details
+Press the select button to return to the device list
+Running BLE AttacksTechnical Notes
+BLE scanning uses the NimBLE library, which is a lighter-weight alternative to the standard ESP32 BLE library
+The maximum transmit power is set differently based on the ESP32 variant:
+ESP32C3/C2/S3: +21 dBm
+ESP32H2/C6: +20 dBm
+Other ESP32 variants: +9 dBm
+The BLE attacks use randomized MAC addresses to avoid filtering or blocking
+All attacks use crafted manufacturer-specific data fields to trigger the target device's pairing system
+Sources:
+
+src/modules/ble/ble_spam.cpp
+6-14
+src/modules/ble/ble_common.cpp
+35-83
+src/modules/ble/ble_spam.cpp
+334-344
+From the main menu, select "BLE Menu"
+Select "BLE Spam"
+Choose an attack type:
+iOS Spam
